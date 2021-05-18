@@ -1,0 +1,9 @@
+{
+    "nameUsed": "TestVai",
+    "homeNumber": "888-888-8888",
+    "hobbiesList": ["chess","cricket" ],
+    "contactNo": {
+        "emailId": "xyz.gmail",
+        "mobiNo": "181-121-0000"
+    }
+}
