@@ -16,7 +16,7 @@ def process_file(input_file: str, username:str, passwrod: str, url: str):
     missing = {} 
     for record in data: 
         master_no = record['_id'] 
-        g_data = call_gatorsky(master_no) 
+        g_data = call_gsky(master_no) 
         missing_keys, bad_keys = compare_json(g_data, record['_source']) 
         missing[master_no] = missing_keys   
         bad[master_no] = bad_keys 
@@ -28,7 +28,7 @@ def load_args():
     parser.add_argument("-f", dest="file", help="input file with 1 ID per line", action="append") 
     parser.add_argument("-i", dest="index", help="name of index to query LiveSearch", action="append") 
     parser.add_argument("-e", dest="es_host", help="URL for ElasticSearch host",  
-    default='cn-livesearch-dev-es-proxy.contentnow.warnerbros.com') 
+    default='link') 
     parser.add_argument("-p", dest="port", help="Port for ES host", default=9200) 
     parser.add_argument("-o", dest="output", help="Output file, 1 ID per line", default="output_ids.csv") 
     return parser.parse_args() 
